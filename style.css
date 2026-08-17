@@ -1,0 +1,30 @@
+:root {
+    --primary: #4F46E5;
+    --bg: #F9FAFB;
+    --text: #1F2937;
+    --border: #E5E7EB;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+
+body { background-color: var(--bg); color: var(--text); padding: 20px; display: flex; justify-content: center; }
+
+.container { width: 100%; max-width: 500px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+header { text-align: center; margin-bottom: 20px; }
+header p { font-size: 0.85rem; color: #6B7280; }
+
+form { display: flex; gap: 10px; margin-bottom: 20px; }
+input { flex: 1; padding: 10px 15px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; outline: none; }
+input:focus { border-color: var(--primary); }
+button { padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+button:hover { background: #4338CA; }
+
+ul { list-style: none; }
+li { display: flex; align-items: center; justify-content: space-between; padding: 12px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; background: #fff; }
+li.selesai span { text-decoration: line-through; color: #9CA3AF; }
+
+.aksi-tugas { display: flex; gap: 10px; align-items: center; }
+.checkbox-bulat { width: 20px; height: 20px; cursor: pointer; }
+.btn-padam { background: #EF4444; font-size: 0.8rem; padding: 5px 10px; }
+.btn-padam:hover { background: #DC2626; }
