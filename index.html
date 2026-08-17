@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadual Harian</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tugas Harian</h1>
+            <p>Beroperasi 100% Offline (Local-First)</p>
+        </header>
+
+        <form id="form-tugas">
+            <input type="text" id="input-tugas" placeholder="Apa fokus anda hari ini?" required autocomplete="off">
+            <button type="submit">Tambah</button>
+        </form>
+
+        <ul id="senarai-tugas"></ul>
+    </div>
+
+    <!-- Panggil modul JS utama -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
