@@ -1,9 +1,28 @@
-import { dapatkanSemuaTugas, kemaskiniTugas, padamTugas } from './db.js';
+import { dapatkanSemuaTugas, tambahTugas, kemaskiniTugas, padamTugas } from './db.js';
 
 const senaraiTugas = document.getElementById('senarai-tugas');
 
+// Fungsi untuk masukkan jadual automatik jika pangkalan data masih kosong
+async function initJadual() {
+    const tugas = await dapatkanSemuaTugas();
+    if (tugas.length === 0) { 
+        const jadualDefault = [
+            "Hantar adik ke USIM (6:46 AM)",
+            "Tugas Masjid / Zikir Pagi",
+            "Fasa Produktif: Bina Modul/Web",
+            "Ambil adik dari USIM (3:45 PM)",
+            "Sesi Luahan / Refleksi Diri"
+        ];
+        for (const item of jadualDefault) {
+            await tambahTugas(item);
+        }
+        location.reload(); // Muat semula untuk paparkan data terkini
+    }
+}
+
 // Render senarai ke skrin
 export async function muatSenaraiUI() {
+    await initJadual(); // Semak dan isi jadual default jika kosong
     senaraiTugas.innerHTML = ''; 
     const tugasArray = await dapatkanSemuaTugas();
 
